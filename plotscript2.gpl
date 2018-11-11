@@ -1,0 +1,33 @@
+set terminal epslatex
+set output "GaussSeidel_lambda.tex"
+
+set format y "%.e"
+set logscale xy
+set xlabel "$k$"
+set ylabel "$\\| r^{(k)} \\|_{\\infty}$"
+set key reverse Left outside
+set grid
+
+set style line 2  lc rgb '#0025ad' lt 1 lw 1.5 # --- blue
+set style line 3  lc rgb '#0042ad' lt 1 lw 1.5 #      .
+set style line 4  lc rgb '#0060ad' lt 1 lw 1.5 #      .
+set style line 5  lc rgb '#007cad' lt 1 lw 1.5 #      .
+set style line 6  lc rgb '#0099ad' lt 1 lw 1.5 #      .
+set style line 7  lc rgb '#00ada4' lt 1 lw 1.5 #      .
+set style line 8  lc rgb '#00ad88' lt 1 lw 1.5 #      .
+set style line 9  lc rgb '#00ad6b' lt 1 lw 1.5 #      .
+set style line 10 lc rgb '#00ad4e' lt 1 lw 1.5 #      .
+set style line 11 lc rgb '#00ad31' lt 1 lw 1.5 #      .
+set style line 12 lc rgb '#00ad14' lt 1 lw 1.5 #      .
+set style line 13 lc rgb '#09ad00' lt 1 lw 1.5 # --- green
+
+plot "GaussSeidel_lambda_1.000000.dat" using 1:2 with lines ls 2 title "$\\lambda = 1$", \
+     "GaussSeidel_lambda_10.000000.dat" using 1:2 with lines ls 3 title "$\\lambda = 10$", \
+     "GaussSeidel_lambda_50.000000.dat" using 1:2 with lines ls 4 title "$\\lambda = 50$", \
+     "GaussSeidel_lambda_100.000000.dat" using 1:2 with lines ls 5 title "$\\lambda = 100$", \
+     "GaussSeidel_lambda_500.000000.dat" using 1:2 with lines ls 6 title "$\\lambda = 500$", \
+     "GaussSeidel_lambda_1000.000000.dat" using 1:2 with lines ls 7 title "$\\lambda = 1000$", \
+     "GaussSeidel_lambda_5000.000000.dat" using 1:2 with lines ls 8 title "$\\lambda = 5000$", \
+     "GaussSeidel_lambda_10000.000000.dat" using 1:2 with lines ls 9 title "$\\lambda = 10000$", \
+     "GaussSeidel_lambda_50000.000000.dat" using 1:2 with lines ls 10 title "$\\lambda = 50000$", \
+     "GaussSeidel_lambda_100000.000000.dat" using 1:2 with lines ls 11 title "$\\lambda = 100000$"
